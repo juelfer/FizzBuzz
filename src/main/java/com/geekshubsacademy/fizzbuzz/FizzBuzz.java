@@ -6,4 +6,9 @@ public class FizzBuzz {
     {
         return 0 == value%3;
     }
+
+    public boolean isBuzz(int value)
+    {
+        return 0 == value%5;
+    }
 }
