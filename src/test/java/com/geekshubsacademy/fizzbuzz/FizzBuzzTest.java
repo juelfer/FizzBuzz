@@ -42,6 +42,18 @@ public class FizzBuzzTest {
         };
     }
 
+    @DataProvider
+    public static Object[][] dataListProvider() {
+        return new Object[][] {
+                {1, "1"},
+                {2, "2"},
+                {3, "Fizz"},
+                {4, "4"},
+                {5, "Buzz"},
+                {15, "FizzBuzz"}
+        };
+    }
+
     @Test
     public void firstTest()
     {
@@ -80,6 +92,16 @@ public class FizzBuzzTest {
         //FizzBuzz fizzbuzz = new FizzBuzz();
         //Act
         boolean result = FizzBuzz.isFizzBuzz(input);
+        //Assertion
+        assertEquals(expected, result);
+    }
+
+    @Test
+    @UseDataProvider("dataListProvider")
+    public void itShouldGenerateCorrectReplacementForEachNumber(final int input, final String expected)
+    {
+        //Arrange-Act
+        String result = FizzBuzz.getReplacement(input);
         //Assertion
         assertEquals(expected, result);
     }
