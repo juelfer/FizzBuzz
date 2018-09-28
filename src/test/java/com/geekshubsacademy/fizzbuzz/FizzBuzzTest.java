@@ -53,9 +53,9 @@ public class FizzBuzzTest {
     public void itShouldReturnFizzIfDivisibleByThree(final int input, final boolean expected)
     {
         //Arrange
-        FizzBuzz fizzbuzz = new FizzBuzz();
+        //FizzBuzz fizzbuzz = new FizzBuzz();
         //Act
-        boolean result = fizzbuzz.isFizz(input);
+        boolean result = FizzBuzz.isFizz(input);
         //Assertion
         assertEquals(expected, result);
     }
@@ -65,9 +65,9 @@ public class FizzBuzzTest {
     public void itShouldReturnBuzzIfDivisibleByFive(final int input, final boolean expected)
     {
         //Arrange
-        FizzBuzz fizzbuzz = new FizzBuzz();
+        //FizzBuzz fizzbuzz = new FizzBuzz();
         //Act
-        boolean result = fizzbuzz.isBuzz(input);
+        boolean result = FizzBuzz.isBuzz(input);
         //Assertion
         assertEquals(expected, result);
     }
@@ -77,9 +77,9 @@ public class FizzBuzzTest {
     public void itShouldReturnFizzBuzzIfDivisibleByThreeandFive(final int input, final boolean expected)
     {
         //Arrange
-        FizzBuzz fizzbuzz = new FizzBuzz();
+        //FizzBuzz fizzbuzz = new FizzBuzz();
         //Act
-        boolean result = fizzbuzz.isFizzBuzz(input);
+        boolean result = FizzBuzz.isFizzBuzz(input);
         //Assertion
         assertEquals(expected, result);
     }
