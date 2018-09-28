@@ -11,4 +11,9 @@ public class FizzBuzz {
     {
         return 0 == value%5;
     }
+
+    public boolean isFizzBuzz(int value)
+    {
+        return isFizz(value) && isBuzz(value);
+    }
 }
