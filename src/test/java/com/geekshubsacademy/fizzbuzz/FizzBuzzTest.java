@@ -25,4 +25,18 @@ public class FizzBuzzTest {
         //Assertion
         assertTrue(result);
     }
+
+    @Test
+    public void itShouldReturnBuzzIfDivisibleByFive()
+    {
+        //Arrange
+        FizzBuzz fizzbuzz = new FizzBuzz();
+        int value = 5;
+
+        //Act
+        boolean result = fizzbuzz.isBuzz(value);
+
+        //Assertion
+        assertTrue(result);
+    }
 }
