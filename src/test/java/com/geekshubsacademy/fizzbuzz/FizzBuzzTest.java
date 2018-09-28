@@ -13,12 +13,22 @@ import static org.junit.Assert.assertTrue;
 public class FizzBuzzTest {
 
     @DataProvider
-    public static Object[][] dataNumberProvider() {
+    public static Object[][] dataNumberProviderForFizz() {
         return new Object[][] {
                 {3, true},
                 {18, true},
                 {27, true},
                 {33, true}
+        };
+    }
+
+    @DataProvider
+    public static Object[][] dataNumberProviderForBuzz() {
+        return new Object[][] {
+                {5, true},
+                {10, true},
+                {25, true},
+                {35, true}
         };
     }
 
@@ -29,7 +39,7 @@ public class FizzBuzzTest {
     }
 
     @Test
-    @UseDataProvider("dataNumberProvider")
+    @UseDataProvider("dataNumberProviderForFizz")
     public void itShouldReturnFizzIfDivisibleByThree(final int input, final boolean expected)
     {
         //Arrange
@@ -44,16 +54,17 @@ public class FizzBuzzTest {
     }
 
     @Test
-    public void itShouldReturnBuzzIfDivisibleByFive()
+    @UseDataProvider("dataNumberProviderForBuzz")
+    public void itShouldReturnBuzzIfDivisibleByFive(final int input, final boolean expected)
     {
         //Arrange
         FizzBuzz fizzbuzz = new FizzBuzz();
         int value = 5;
 
         //Act
-        boolean result = fizzbuzz.isBuzz(value);
+        boolean result = fizzbuzz.isBuzz(input);
 
         //Assertion
-        assertTrue(result);
+        assertEquals(expected, result);
     }
 }
